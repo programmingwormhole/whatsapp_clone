@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp_chat/utils/colors.dart';
-
 import '../../../utils/data.dart';
 
 class ChatTab extends StatelessWidget {
@@ -8,14 +7,27 @@ class ChatTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return ListView.builder(
       itemCount: chats.length,
       itemBuilder: (_, index) {
         return ListTile(
-          leading: CircleAvatar(
-            backgroundColor: white.withOpacity(.1),
-            radius: 25,
-            backgroundImage: NetworkImage(chats[index]['image']),
+          leading: InkWell(
+            onTap: () {
+              showDialog(context: context, builder: (_) => Container(
+                height: size.height * .6,
+                width: size.width * .9,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    image: DecorationImage(image: NetworkImage(chats[index]['image']))
+                ),
+              ));
+            },
+            child: CircleAvatar(
+              backgroundColor: white.withOpacity(.1),
+              radius: 25,
+              backgroundImage: NetworkImage(chats[index]['image']),
+            ),
           ),
           title: Text(
             chats[index]['name'],
