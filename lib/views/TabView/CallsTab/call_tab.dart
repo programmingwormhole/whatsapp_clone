@@ -11,6 +11,9 @@ class CallTab extends StatelessWidget {
         itemCount: calls.length,
         itemBuilder: (_, index) {
           return ListTile(
+            contentPadding: const EdgeInsets.only(
+              left: 15,
+            ),
             leading: CircleAvatar(
               backgroundColor: white.withOpacity(.1),
               radius: 25,
