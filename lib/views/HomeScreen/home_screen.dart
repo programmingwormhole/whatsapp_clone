@@ -4,6 +4,7 @@ import 'package:whatsapp_chat/utils/colors.dart';
 import 'package:whatsapp_chat/views/SettingsScreen/setting_screen.dart';
 import 'package:whatsapp_chat/views/TabView/CallsTab/call_tab.dart';
 import 'package:whatsapp_chat/views/TabView/ChatTab/chat_tab.dart';
+import 'package:whatsapp_chat/views/TabView/CommunityTab/community_tab.dart';
 
 import '../../components/pop_up_menu_item.dart';
 import '../../components/tabs.dart';
@@ -172,14 +173,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         child: TabBarView(
           controller: _tabController,
           children: const [
-            Center(
-              child: Text(
-                'Community',
-                style: TextStyle(
-                  color: white,
-                ),
-              ),
-            ),
+            CommunityTab(),
             ChatTab(),
             StatusScreen(),
             CallTab(),
