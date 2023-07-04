@@ -27,9 +27,12 @@ class CallTab extends StatelessWidget {
           ),
           subtitle: Row(
             children: [
-              const Icon(
-                Icons.call_received, // use Icons.call_made for outgoing call
-                color: Colors.red,
+              Icon(
+                calls[index]['status'] == 'incoming'
+                    ? Icons.call_received
+                    : Icons.call_made,
+                color:
+                    calls[index]['status'] == 'incoming' ? Colors.red : primary,
                 size: 20,
               ),
               Text(
@@ -44,8 +47,8 @@ class CallTab extends StatelessWidget {
           ),
           trailing: IconButton(
             onPressed: () {},
-            icon: const Icon(
-              Icons.call, // use Icons.videocam for video call
+            icon: Icon(
+              calls[index]['call_type'] == 'audio' ? Icons.call : Icons.videocam,
               color: primary,
             ),
           ),
