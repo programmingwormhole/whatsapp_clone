@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp_chat/components/page_route.dart';
 import 'package:whatsapp_chat/utils/colors.dart';
+import 'package:whatsapp_chat/views/SettingsScreen/setting_screen.dart';
 import 'package:whatsapp_chat/views/TabView/CallsTab/call_tab.dart';
 import 'package:whatsapp_chat/views/TabView/ChatTab/chat_tab.dart';
 
@@ -104,7 +106,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                 case 0:
                   switch (result) {
                     case 0:
-                      print('Index 1');
+                      navigator(context, const SettingScreen());
                       break;
                   }
                   break;
@@ -123,7 +125,26 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                       print('Starred message tapped');
                       break;
                     case 4:
-                      print('Index 4');
+                      navigator(context, const SettingScreen());
+                  }
+                  break;
+                case 2:
+                  switch (result) {
+                    case 0:
+                      print('New Group Tapped');
+                      break;
+                    case 1:
+                      navigator(context, const SettingScreen());
+                      break;
+                  }
+                case 3:
+                  switch (result) {
+                    case 0:
+                      print('New Group Tapped');
+                      break;
+                    case 1:
+                      navigator(context, const SettingScreen());
+                      break;
                   }
               }
             },

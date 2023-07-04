@@ -85,26 +85,44 @@ class StatusScreen extends StatelessWidget {
           height: 10,
         ),
         ListView.builder(
-          shrinkWrap: true,
-          primary: false,
-          itemCount: 3,
-            itemBuilder: (_, index){
-          return ListTile(
-            leading: CircleAvatar(
-              radius: 25,
-              backgroundImage: NetworkImage(chats[index]['image']),
-            ),
-            title: Text(
-              chats[index]['name'],
-              style: const TextStyle(
-                  color: white,
-              ),
-            ),
-            subtitle: Text('Today, ${chats[index]['story_time']}',
-              style: TextStyle(color: white.withOpacity(.5)),
-            ),
-          );
-        })
+            shrinkWrap: true,
+            primary: false,
+            itemCount: 3,
+            itemBuilder: (_, index) {
+              return ListTile(
+                contentPadding: const EdgeInsets.only(
+                  left: 15
+                ),
+                leading: Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      color: primary,
+                      width: 1,
+                    ),
+                    shape: BoxShape.circle,
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(
+                      4.0,
+                    ),
+                    child: CircleAvatar(
+                      radius: 25,
+                      backgroundImage: NetworkImage(chats[index]['image']),
+                    ),
+                  ),
+                ),
+                title: Text(
+                  chats[index]['name'],
+                  style: const TextStyle(
+                    color: white,
+                  ),
+                ),
+                subtitle: Text(
+                  'Today, ${chats[index]['story_time']}',
+                  style: TextStyle(color: white.withOpacity(.5)),
+                ),
+              );
+            })
       ],
     );
   }
