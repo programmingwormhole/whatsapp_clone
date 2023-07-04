@@ -9,7 +9,7 @@ List<Map> calls = [
   {
     'name' : 'Rifat Vai Flutter',
     'image' : 'https://pps.whatsapp.net/v/t61.24694-24/328294789_5800024190096620_2761675573885961868_n.jpg?ccb=11-4&oh=01_AdTpq8Orvsc1mSlISxvOfCO54aMe5w_MG0DMm8_Dkxq_TQ&oe=64B13CE5',
-    'time' : 'Today 7:54 PM',
+    'time' : 'Yesterday, 7:54 PM',
     'call_type' : 'audio',
     'status' : 'outgoing',
   },
