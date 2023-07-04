@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp_chat/utils/colors.dart';
+import 'package:whatsapp_chat/views/TabView/CallsTab/call_tab.dart';
 import 'package:whatsapp_chat/views/TabView/ChatTab/chat_tab.dart';
 
 import '../../components/pop_up_menu_item.dart';
@@ -160,14 +161,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             ),
             ChatTab(),
             StatusScreen(),
-            Center(
-              child: Text(
-                'Calls',
-                style: TextStyle(
-                  color: white,
-                ),
-              ),
-            ),
+            CallTab(),
           ],
         ),
       ),
