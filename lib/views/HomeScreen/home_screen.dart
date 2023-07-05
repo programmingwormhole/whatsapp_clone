@@ -8,6 +8,7 @@ import 'package:whatsapp_chat/views/TabView/CommunityTab/community_tab.dart';
 
 import '../../components/pop_up_menu_item.dart';
 import '../../components/tabs.dart';
+import '../../utils/config.dart';
 import '../TabView/StatusTab/status_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -81,8 +82,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         elevation: 0,
         backgroundColor: appBarColor,
         automaticallyImplyLeading: false,
-        title: Text(
-          'WhatsApp',
+        title: Text(appName,
           style: TextStyle(
             color: white.withOpacity(.5),
           ),

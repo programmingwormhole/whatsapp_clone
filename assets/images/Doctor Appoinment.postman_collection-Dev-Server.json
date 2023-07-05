@@ -1,0 +1,1969 @@
+{
+	"info": {
+		"_postman_id": "848c9291-6bd0-451b-bdf1-970f249d4066",
+		"name": "Doctor Appointment Dev Server",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23774754"
+	},
+	"item": [
+		{
+			"name": "General Users",
+			"item": [
+				{
+					"name": "Prescriptions",
+					"item": [
+						{
+							"name": "Add Prescription",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "7|HIQgON276nLZmFQhLhjBtVH9IBpbzu3L4x127pqV",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "photo",
+											"type": "file",
+											"src": "/C:/Users/Maxell/Downloads/samsung-g668635f30_1920.jpg"
+										},
+										{
+											"key": "descriptions",
+											"value": "dsf dsfasd",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://doctor.wishesimg.com/api/user/prescription/add",
+									"protocol": "https",
+									"host": [
+										"doctor",
+										"wishesimg",
+										"com"
+									],
+									"path": [
+										"api",
+										"user",
+										"prescription",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Prescription Update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "7|HIQgON276nLZmFQhLhjBtVH9IBpbzu3L4x127pqV",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "photo",
+											"type": "file",
+											"src": "/C:/Users/Maxell/Downloads/samsung-g668635f30_1920.jpg"
+										},
+										{
+											"key": "descriptions",
+											"value": "hhhhhhh",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://doctor.wishesimg.com/api/user/prescription/update/1",
+									"protocol": "https",
+									"host": [
+										"doctor",
+										"wishesimg",
+										"com"
+									],
+									"path": [
+										"api",
+										"user",
+										"prescription",
+										"update",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Prescription",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "7|HIQgON276nLZmFQhLhjBtVH9IBpbzu3L4x127pqV",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://doctor.wishesimg.com/api/user/prescription/delete/1",
+									"protocol": "https",
+									"host": [
+										"doctor",
+										"wishesimg",
+										"com"
+									],
+									"path": [
+										"api",
+										"user",
+										"prescription",
+										"delete",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Send Prescription to Doctor",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "7|HIQgON276nLZmFQhLhjBtVH9IBpbzu3L4x127pqV",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "prescription_id",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "doctor_id",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://doctor.wishesimg.com/api/user/prescription/send",
+									"protocol": "https",
+									"host": [
+										"doctor",
+										"wishesimg",
+										"com"
+									],
+									"path": [
+										"api",
+										"user",
+										"prescription",
+										"send"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Show All Prescriptions",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "7|HIQgON276nLZmFQhLhjBtVH9IBpbzu3L4x127pqV",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://doctor.wishesimg.com/api/user/prescription/all",
+									"protocol": "https",
+									"host": [
+										"doctor",
+										"wishesimg",
+										"com"
+									],
+									"path": [
+										"api",
+										"user",
+										"prescription",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Show Sent to doctor prescriptions",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "7|HIQgON276nLZmFQhLhjBtVH9IBpbzu3L4x127pqV",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://doctor.wishesimg.com/api/user/prescription/sent",
+									"protocol": "https",
+									"host": [
+										"doctor",
+										"wishesimg",
+										"com"
+									],
+									"path": [
+										"api",
+										"user",
+										"prescription",
+										"sent"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "General User Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Anowar Hosen",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "megamindjony@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "01444414q32",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "ddsaddsasdads",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "jony1234",
+									"type": "text"
+								},
+								{
+									"key": "confirm_password",
+									"value": "jony1234",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "General User login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user",
+									"value": "megamindjony@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "jony1234",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://doctor.wishesimg.com/api/login",
+							"protocol": "https",
+							"host": [
+								"doctor",
+								"wishesimg",
+								"com"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "General User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "6|vFvyYsu8GbGqBxEjyU8hB9IAVpGmaxvs1PnOY5Rb",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://doctor.wishesimg.com/api/user",
+							"protocol": "https",
+							"host": [
+								"doctor",
+								"wishesimg",
+								"com"
+							],
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Doctor/Agent",
+			"item": [
+				{
+					"name": "Doctor/Agent Login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user",
+									"value": "jony@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "jony1234",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://doctor.wishesimg.com/api/doctor-agent/login",
+							"protocol": "https",
+							"host": [
+								"doctor",
+								"wishesimg",
+								"com"
+							],
+							"path": [
+								"api",
+								"doctor-agent",
+								"login"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Positions",
+			"item": [
+				{
+					"name": "All Positions",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "10|ss0bAGc5AdNMpF8g1IqHGXKRnrHfksWQvA4jAPjW",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://doctor.wishesimg.com/api/positions",
+							"protocol": "https",
+							"host": [
+								"doctor",
+								"wishesimg",
+								"com"
+							],
+							"path": [
+								"api",
+								"positions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Set Position",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|K7VdHBWmLZIFybtR8fR81RiCZMTfrIOie1JI0zcD",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "position_id",
+									"value": "5",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://doctor.wishesimg.com/api/doctor-agent/set-position",
+							"protocol": "https",
+							"host": [
+								"doctor",
+								"wishesimg",
+								"com"
+							],
+							"path": [
+								"api",
+								"doctor-agent",
+								"set-position"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Departments",
+			"item": [
+				{
+					"name": "All Departments",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "11|rsEaBsMNSXljhGgrAP9cD2quOjwGS8biDlGELiFL",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://doctor.wishesimg.com/api/departments",
+							"protocol": "https",
+							"host": [
+								"doctor",
+								"wishesimg",
+								"com"
+							],
+							"path": [
+								"api",
+								"departments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Set Department",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "16|15amPm56sN15uCwmQwbBPGnfRFGRXUyQoFHuku1p",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "departments_id",
+									"value": "2",
+									"description": "pass depertments id as like: 1,2 or if single then just: 1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://doctor.wishesimg.com/api/doctor-agent/set-department",
+							"protocol": "https",
+							"host": [
+								"doctor",
+								"wishesimg",
+								"com"
+							],
+							"path": [
+								"api",
+								"doctor-agent",
+								"set-department"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "any api auth user can access that api"
+		},
+		{
+			"name": "Experience",
+			"item": [
+				{
+					"name": "Add Experience",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "15|W0JcnmCUIr6bp5s50J6WUVVEEKlHCVDXd2Nyk9jg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "designation",
+									"value": "ssd",
+									"type": "text"
+								},
+								{
+									"key": "department_id",
+									"value": "2",
+									"description": "Pass Depertment id here",
+									"type": "text"
+								},
+								{
+									"key": "working_place",
+									"value": "Rajshahi Hospital",
+									"description": "Hospital name",
+									"type": "text"
+								},
+								{
+									"key": "employment_status",
+									"value": "dads",
+									"type": "text"
+								},
+								{
+									"key": "period",
+									"value": "sad",
+									"description": "Insert time here",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://doctor.wishesimg.com/api/doctor-agent/add-experience",
+							"protocol": "https",
+							"host": [
+								"doctor",
+								"wishesimg",
+								"com"
+							],
+							"path": [
+								"api",
+								"doctor-agent",
+								"add-experience"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Experiences",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "6|W5v7QFxRhwcWUltCGnfTuW6GIjoMRznJvsOsT6L2",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://doctor.wishesimg.com/api/doctor-agent/experiences",
+							"protocol": "https",
+							"host": [
+								"doctor",
+								"wishesimg",
+								"com"
+							],
+							"path": [
+								"api",
+								"doctor-agent",
+								"experiences"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Experience",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "6|W5v7QFxRhwcWUltCGnfTuW6GIjoMRznJvsOsT6L2",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "designation",
+									"value": "ajj",
+									"type": "text"
+								},
+								{
+									"key": "department_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "employment_status",
+									"value": "ajj",
+									"type": "text"
+								},
+								{
+									"key": "period",
+									"value": "sdd",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://doctor.wishesimg.com/api/doctor-agent/experience-update/3",
+							"protocol": "https",
+							"host": [
+								"doctor",
+								"wishesimg",
+								"com"
+							],
+							"path": [
+								"api",
+								"doctor-agent",
+								"experience-update",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "6|W5v7QFxRhwcWUltCGnfTuW6GIjoMRznJvsOsT6L2",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://doctor.wishesimg.com/api/doctor-agent/experience/2",
+							"protocol": "https",
+							"host": [
+								"doctor",
+								"wishesimg",
+								"com"
+							],
+							"path": [
+								"api",
+								"doctor-agent",
+								"experience",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Information",
+			"item": [
+				{
+					"name": "Add Information",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|gaTipmEYXRHK3Dkd3SVwLHDoFgzNDRKuOR5sj9wd",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "consultation_fee",
+									"value": "500",
+									"type": "text"
+								},
+								{
+									"key": "follow_up_fee",
+									"value": "500",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://doctor.wishesimg.com/api/doctor-agent/information",
+							"protocol": "https",
+							"host": [
+								"doctor",
+								"wishesimg",
+								"com"
+							],
+							"path": [
+								"api",
+								"doctor-agent",
+								"information"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Doctor Information",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|gaTipmEYXRHK3Dkd3SVwLHDoFgzNDRKuOR5sj9wd",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://doctor.wishesimg.com/api/doctor-agent/information",
+							"protocol": "https",
+							"host": [
+								"doctor",
+								"wishesimg",
+								"com"
+							],
+							"path": [
+								"api",
+								"doctor-agent",
+								"information"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Doctor Information",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "6|W5v7QFxRhwcWUltCGnfTuW6GIjoMRznJvsOsT6L2",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "consultation_fee",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "follow_up_fee",
+									"value": "140",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://doctor.wishesimg.com/api/doctor-agent/information-update",
+							"protocol": "https",
+							"host": [
+								"doctor",
+								"wishesimg",
+								"com"
+							],
+							"path": [
+								"api",
+								"doctor-agent",
+								"information-update"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Symptom",
+			"item": [
+				{
+					"name": "Set Symptoms",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "16|15amPm56sN15uCwmQwbBPGnfRFGRXUyQoFHuku1p",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "symptom_id",
+									"value": "1",
+									"description": "pass symptom id as like: 1,2 or if single then just: 1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://doctor.wishesimg.com/api/doctor-agent/set-symptom",
+							"protocol": "https",
+							"host": [
+								"doctor",
+								"wishesimg",
+								"com"
+							],
+							"path": [
+								"api",
+								"doctor-agent",
+								"set-symptom"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Symptoms",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "16|15amPm56sN15uCwmQwbBPGnfRFGRXUyQoFHuku1p",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://doctor.wishesimg.com/api/symptoms",
+							"protocol": "https",
+							"host": [
+								"doctor",
+								"wishesimg",
+								"com"
+							],
+							"path": [
+								"api",
+								"symptoms"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reviews",
+			"item": [
+				{
+					"name": "Add review",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|Fz9zwzTNl9BvWmbRwmAVVvrAUzQtgxaClr5u0j19",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "doctor_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "stars",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "review_text",
+									"value": "dlsd sadhsd dsfs",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://doctor.wishesimg.com/api/user/review",
+							"protocol": "https",
+							"host": [
+								"doctor",
+								"wishesimg",
+								"com"
+							],
+							"path": [
+								"api",
+								"user",
+								"review"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Review",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|Fz9zwzTNl9BvWmbRwmAVVvrAUzQtgxaClr5u0j19",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "stars",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "review_text",
+									"value": "aaaaaaaaa best",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://doctor.wishesimg.com/api/user/review/edit/6",
+							"protocol": "https",
+							"host": [
+								"doctor",
+								"wishesimg",
+								"com"
+							],
+							"path": [
+								"api",
+								"user",
+								"review",
+								"edit",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Doctor",
+			"item": [
+				{
+					"name": "Addresses",
+					"item": [
+						{
+							"name": "Add Doctor Address",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "9|RM1kv5R4F6qNiUm2PTOduQvCsfdbIKoQK8xEi7Qq",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "longitude",
+											"value": "6464.456464646535",
+											"type": "text"
+										},
+										{
+											"key": "latitude",
+											"value": "6684.456446544535",
+											"type": "text"
+										},
+										{
+											"key": "address",
+											"value": "Rajshahi - Darusha - Tetulia",
+											"type": "text"
+										},
+										{
+											"key": "city",
+											"value": "Rajshahi",
+											"type": "text"
+										},
+										{
+											"key": "area",
+											"value": "Rajshahi area",
+											"type": "text"
+										},
+										{
+											"key": "postCode",
+											"value": "6210",
+											"type": "text"
+										},
+										{
+											"key": "pType",
+											"value": "dsa",
+											"type": "text"
+										},
+										{
+											"key": "uCode",
+											"value": "dada",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://doctor.wishesimg.com/api/doctor/address",
+									"protocol": "https",
+									"host": [
+										"doctor",
+										"wishesimg",
+										"com"
+									],
+									"path": [
+										"api",
+										"doctor",
+										"address"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Doctor Address",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "9|RM1kv5R4F6qNiUm2PTOduQvCsfdbIKoQK8xEi7Qq",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "longitude",
+											"value": "6464.45642456535",
+											"type": "text"
+										},
+										{
+											"key": "latitude",
+											"value": "6684.45644557445",
+											"type": "text"
+										},
+										{
+											"key": "address",
+											"value": "Rajshahi - Darusha - Tetulia - Bangladesh",
+											"type": "text"
+										},
+										{
+											"key": "city",
+											"value": "Rajshahi",
+											"type": "text"
+										},
+										{
+											"key": "area",
+											"value": "Rajshahi area",
+											"type": "text"
+										},
+										{
+											"key": "postCode",
+											"value": "6210",
+											"type": "text"
+										},
+										{
+											"key": "pType",
+											"value": "adadadg",
+											"type": "text"
+										},
+										{
+											"key": "uCode",
+											"value": "earae",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://doctor.wishesimg.com/api/doctor/address/update",
+									"protocol": "https",
+									"host": [
+										"doctor",
+										"wishesimg",
+										"com"
+									],
+									"path": [
+										"api",
+										"doctor",
+										"address",
+										"update"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Appointments",
+					"item": [
+						{
+							"name": "All Appointments",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "18|MWyzAGA1fE9hUyAW1oOO061i8aA3JM4eb9hLraL1",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://doctor.wishesimg.com/api/doctor/appointments",
+									"protocol": "https",
+									"host": [
+										"doctor",
+										"wishesimg",
+										"com"
+									],
+									"path": [
+										"api",
+										"doctor",
+										"appointments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Consultation Details",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "18|MWyzAGA1fE9hUyAW1oOO061i8aA3JM4eb9hLraL1",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "appointment_id",
+											"value": "8",
+											"description": "insert appointment id here. you will get appointment id from all appointments api.",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://doctor.wishesimg.com/api/doctor/consultation-details",
+									"protocol": "https",
+									"host": [
+										"doctor",
+										"wishesimg",
+										"com"
+									],
+									"path": [
+										"api",
+										"doctor",
+										"consultation-details"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Doctor own Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "11|rsEaBsMNSXljhGgrAP9cD2quOjwGS8biDlGELiFL",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://doctor.wishesimg.com/api/doctor/profile",
+							"protocol": "https",
+							"host": [
+								"doctor",
+								"wishesimg",
+								"com"
+							],
+							"path": [
+								"api",
+								"doctor",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Prescriptions",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "8|iHd3kUsYJ8gD3TY7zzDa2rJIXJ6OiaFU9u2FZ1Rl",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://doctor.wishesimg.com/api/doctor/prescriptions",
+							"protocol": "https",
+							"host": [
+								"doctor",
+								"wishesimg",
+								"com"
+							],
+							"path": [
+								"api",
+								"doctor",
+								"prescriptions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Status Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "12|305NMtNi7CZ7xynI5JYCI81ePsn6gVvFx6eLaBYL",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "status",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/doctor/profile/status",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"doctor",
+								"profile",
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Make Prescription",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Agent",
+			"item": [
+				{
+					"name": "Agent own Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "5|fSgLM0zVakpGtV8daICo4CkP2xAOqI90FMvqynRx",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://doctor.wishesimg.com/api/agent/profile",
+							"protocol": "https",
+							"host": [
+								"doctor",
+								"wishesimg",
+								"com"
+							],
+							"path": [
+								"api",
+								"agent",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Any Auth User/Doctor/Agent can Access",
+			"item": [
+				{
+					"name": "Doctor-Agent Profile",
+					"item": [
+						{
+							"name": "Show Any Doctor Profile",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "5|fSgLM0zVakpGtV8daICo4CkP2xAOqI90FMvqynRx",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://doctor.wishesimg.com/api/doctor/1",
+									"protocol": "https",
+									"host": [
+										"doctor",
+										"wishesimg",
+										"com"
+									],
+									"path": [
+										"api",
+										"doctor",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Show Any Agent Profile",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "5|fSgLM0zVakpGtV8daICo4CkP2xAOqI90FMvqynRx",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://doctor.wishesimg.com/api/agent/1",
+									"protocol": "https",
+									"host": [
+										"doctor",
+										"wishesimg",
+										"com"
+									],
+									"path": [
+										"api",
+										"agent",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Doctors",
+					"item": [
+						{
+							"name": "All Doctors",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "3|MeGpXVUcDRd0RwwLY0fKvTINusFtV54i69o4RDl9",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://doctor.wishesimg.com/api/doctor/all-doctors",
+									"protocol": "https",
+									"host": [
+										"doctor",
+										"wishesimg",
+										"com"
+									],
+									"path": [
+										"api",
+										"doctor",
+										"all-doctors"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Doctor by Department",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "3|MeGpXVUcDRd0RwwLY0fKvTINusFtV54i69o4RDl9",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://doctor.wishesimg.com/api/doctor/doctors-by-department/1",
+									"protocol": "https",
+									"host": [
+										"doctor",
+										"wishesimg",
+										"com"
+									],
+									"path": [
+										"api",
+										"doctor",
+										"doctors-by-department",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Doctor by Symptom",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "4|9JtRtDhGT2UR5GZorKkKlb65YjYe3jzfvj2Xks8k",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://doctor.wishesimg.com/api/doctor/doctors-by-symptom/2",
+									"protocol": "https",
+									"host": [
+										"doctor",
+										"wishesimg",
+										"com"
+									],
+									"path": [
+										"api",
+										"doctor",
+										"doctors-by-symptom",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search Doctor",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "10|CBTaHbDGvwNJCkOIE2Wv3LUlYAQg0BBPMq9tv5Y4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://doctor.wishesimg.com/api/search?query=raj",
+									"protocol": "https",
+									"host": [
+										"doctor",
+										"wishesimg",
+										"com"
+									],
+									"path": [
+										"api",
+										"search"
+									],
+									"query": [
+										{
+											"key": "query",
+											"value": "raj"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Doctor Status",
+			"item": []
+		},
+		{
+			"name": "Payment",
+			"item": [
+				{
+					"name": "Pay",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "17|MhG8vazJYW66tL18O8tMORyn3eD3rdy6GC6F6Vm2",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "doctor_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "full_name",
+									"value": "Anowar Hosen",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "1 year",
+									"description": "percent age",
+									"type": "text"
+								},
+								{
+									"key": "weight",
+									"value": "7",
+									"description": "weight in kg",
+									"type": "text"
+								},
+								{
+									"key": "main_reason",
+									"value": "Pain",
+									"description": "mention main reason here",
+									"type": "text"
+								},
+								{
+									"key": "descriptions",
+									"value": "Havvy Pain",
+									"description": "Briefly describe the problem",
+									"type": "text"
+								},
+								{
+									"key": "amount",
+									"value": "1",
+									"description": "bkash amount",
+									"type": "text"
+								},
+								{
+									"key": "customerMsisdn",
+									"value": "01685235328",
+									"description": "bkash customer number",
+									"type": "text"
+								},
+								{
+									"key": "merchantInvoiceNumber",
+									"value": "#DAP10229",
+									"description": "bkash merchent invoice number",
+									"type": "text"
+								},
+								{
+									"key": "paymentID",
+									"value": "TR0011XSL8RBs1688471907226",
+									"description": "bkash payment id",
+									"type": "text"
+								},
+								{
+									"key": "trxID",
+									"value": "AG410BDYDF",
+									"description": "bkash transaction id",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://doctor.wishesimg.com/api/store/payment/bkash",
+							"protocol": "https",
+							"host": [
+								"doctor",
+								"wishesimg",
+								"com"
+							],
+							"path": [
+								"api",
+								"store",
+								"payment",
+								"bkash"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Slider",
+			"item": [
+				{
+					"name": "Sliders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/sliders",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"sliders"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User Agent",
+			"item": [
+				{
+					"name": "My Prescription",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4|1XUsTV8hqC3o6NPm1K3748AwBdouUV2zwMKa3zcQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/user-agent/my-prescriptions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user-agent",
+								"my-prescriptions"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Agent - General Users",
+			"item": [
+				{
+					"name": "Prescriptions sent by doctors",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "5|XCBfLSsPTvnSD0DtWINBVTNtDJ0SH9f6a6sz47cq",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user-agent/my-prescriptions",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user-agent",
+								"my-prescriptions"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "14|6HWIC4lnLyUEECplBWJOQzQEMIMvjpMALmlxXZ7O",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://doctor.wishesimg.com/api/logout",
+					"protocol": "https",
+					"host": [
+						"doctor",
+						"wishesimg",
+						"com"
+					],
+					"path": [
+						"api",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

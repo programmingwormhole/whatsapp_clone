@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp_chat/utils/colors.dart';
+
 import '../../../utils/data.dart';
 
 class ChatTab extends StatelessWidget {

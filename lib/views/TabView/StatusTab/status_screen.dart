@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp_chat/utils/data.dart';
 import '../../../utils/colors.dart';
+import '../../../utils/data.dart';
 
 class StatusScreen extends StatelessWidget {
   const StatusScreen({super.key});
