@@ -2,7 +2,9 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:lottie/lottie.dart';
+import 'package:whatsapp_chat/components/page_route.dart';
 import 'package:whatsapp_chat/utils/colors.dart';
+import 'package:whatsapp_chat/views/AuthScreen/SetupProfile/setup_profile.dart';
 import '../../../widgets/custom_button.dart';
 
 class OtpScreen extends StatefulWidget {
@@ -154,7 +156,7 @@ class _OtpScreenState extends State<OtpScreen> {
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: TextFormField(
-                  onChanged: (value){
+                  onChanged: (value) {
                     setState(() {
                       otp = value;
                     });
@@ -188,25 +190,28 @@ class _OtpScreenState extends State<OtpScreen> {
                 size: size,
                 title: 'CONFIRM',
                 onTap: () {
-                    if (otp.isEmpty) {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          backgroundColor: primary,
-                          duration: Duration(seconds: 2),
-                          content: Text('Please Enter Your OTP!'),
-                        ),
-                      );
-                    } else if (otp.length < 6) {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          duration: Duration(seconds: 2),
-                          backgroundColor: primary,
-                          content: Text('Please enter 6 digit OTP!'),
-                        ),
-                      );
-                    } else{
-                      print('Valid');
-                    }
+                  if (otp.isEmpty) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        backgroundColor: primary,
+                        duration: Duration(seconds: 2),
+                        content: Text('Please Enter Your OTP!'),
+                      ),
+                    );
+                  } else if (otp.length < 6) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        duration: Duration(seconds: 2),
+                        backgroundColor: primary,
+                        content: Text('Please enter 6 digit OTP!'),
+                      ),
+                    );
+                  } else {
+                    navigator(
+                      context,
+                      const SetupProfile(),
+                    );
+                  }
                 },
               ),
               const SizedBox(
@@ -227,8 +232,6 @@ class _OtpScreenState extends State<OtpScreen> {
                     onTap: _resendTime != 0
                         ? null
                         : () {
-                            print(
-                                'You have tried to resend code $_resendAttempt times');
                             if (_resendAttempt > 3) {
                               ScaffoldMessenger.of(context).showSnackBar(
                                 const SnackBar(
@@ -240,13 +243,14 @@ class _OtpScreenState extends State<OtpScreen> {
                                 ),
                               );
                             } else {
-                              print('Resend Success');
-                              setState(() {
-                                _resendTime = 5;
-                                startTimer();
-                                _resendAttempt++;
-                                _resendAttemptLeft--;
-                              });
+                              setState(
+                                () {
+                                  _resendTime = 5;
+                                  startTimer();
+                                  _resendAttempt++;
+                                  _resendAttemptLeft--;
+                                },
+                              );
                             }
                           },
                     child: Text(
