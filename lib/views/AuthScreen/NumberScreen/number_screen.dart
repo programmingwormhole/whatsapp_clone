@@ -2,8 +2,11 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:lottie/lottie.dart';
+import 'package:whatsapp_chat/components/page_route.dart';
 import 'package:whatsapp_chat/utils/colors.dart';
 import 'package:whatsapp_chat/utils/config.dart';
+import 'package:whatsapp_chat/views/AuthScreen/OtpScreen/otp_screen.dart';
 import 'package:whatsapp_chat/widgets/custom_button.dart';
 
 class NumberScreen extends StatefulWidget {
@@ -14,11 +17,14 @@ class NumberScreen extends StatefulWidget {
 }
 
 class _NumberScreenState extends State<NumberScreen> {
-  
-  String selectedCountry = '+1';
+  String selectedCountry = '+880';
   List countryData = [];
+  String number = '';
+  final _numberController = TextEditingController();
+
   Future<void> readJson() async {
-    final String response = await rootBundle.loadString('assets/json/country_list.json');
+    final String response =
+        await rootBundle.loadString('assets/json/country_list.json');
     final data = await json.decode(response);
     setState(() {
       countryData = data;
@@ -41,10 +47,9 @@ class _NumberScreenState extends State<NumberScreen> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(
-              'assets/images/logo.png',
-              color: white,
-              width: 100,
+            Lottie.asset(
+              'assets/json/number.json',
+              width: 200,
             ),
             const SizedBox(
               height: 20,
@@ -56,6 +61,9 @@ class _NumberScreenState extends State<NumberScreen> {
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),
+            ),
+            const SizedBox(
+              height: 10,
             ),
             Text(
               'Enter your phone number to proceed',
@@ -77,38 +85,45 @@ class _NumberScreenState extends State<NumberScreen> {
                     width: 10,
                   ),
                   InkWell(
-                    onTap: (){
-                      showDialog(context: context, builder: (_) => AlertDialog(
-                        backgroundColor: background,
-                        title: const Text('Select Country', style: TextStyle(
-                          color: white
-                        ),),
-                        content: ListView.builder(
-                          physics: const AlwaysScrollableScrollPhysics(),
-                            itemCount: countryData.length,
-                            itemBuilder: (_, index){
-                          return ListTile(
-                            onTap: (){
-                              setState(() {
-                                selectedCountry = countryData[index]['dial_code'];
-                              });
-                              Navigator.pop(context);
-                            },
-                            title: Text(countryData[index]['name'],
-                            style: const TextStyle(
-                              color: white
-                            ),),
-                            subtitle: Text(countryData[index]['dial_code'],
-                            style: TextStyle(
-                              color: white.withOpacity(.5)
-                            ),),
-                            trailing: Text(countryData[index]['code'],
-                            style: TextStyle(
-                              color: white.withOpacity(.5)
-                            ),),
-                          );
-                        }),
-                      ));
+                    onTap: () {
+                      showDialog(
+                          context: context,
+                          builder: (_) => AlertDialog(
+                                backgroundColor: background,
+                                title: const Text(
+                                  'Select Country',
+                                  style: TextStyle(color: white),
+                                ),
+                                content: ListView.builder(
+                                    physics:
+                                        const AlwaysScrollableScrollPhysics(),
+                                    itemCount: countryData.length,
+                                    itemBuilder: (_, index) {
+                                      return ListTile(
+                                        onTap: () {
+                                          setState(() {
+                                            selectedCountry =
+                                                countryData[index]['dial_code'];
+                                          });
+                                          Navigator.pop(context);
+                                        },
+                                        title: Text(
+                                          countryData[index]['name'],
+                                          style: const TextStyle(color: white),
+                                        ),
+                                        subtitle: Text(
+                                          countryData[index]['dial_code'],
+                                          style: TextStyle(
+                                              color: white.withOpacity(.5)),
+                                        ),
+                                        trailing: Text(
+                                          countryData[index]['code'],
+                                          style: TextStyle(
+                                              color: white.withOpacity(.5)),
+                                        ),
+                                      );
+                                    }),
+                              ));
                     },
                     child: SizedBox(
                       width: 60,
@@ -121,14 +136,11 @@ class _NumberScreenState extends State<NumberScreen> {
                         ),
                         keyboardType: TextInputType.number,
                         decoration: InputDecoration(
-                          hintText: selectedCountry,
-                          hintStyle: TextStyle(
-                            color: white.withOpacity(.5),
-                            fontSize: 18
-                          ),
-                          border: InputBorder.none,
-                          enabled: false
-                        ),
+                            hintText: selectedCountry,
+                            hintStyle: TextStyle(
+                                color: white.withOpacity(.5), fontSize: 18),
+                            border: InputBorder.none,
+                            enabled: false),
                       ),
                     ),
                   ),
@@ -144,11 +156,33 @@ class _NumberScreenState extends State<NumberScreen> {
                   ),
                   Expanded(
                       child: TextField(
-                        style: TextStyle(
-                          color: white.withOpacity(.5),
-                          fontSize: 18,
-                          fontWeight: FontWeight.w600
-                        ),
+                    controller: _numberController,
+                    inputFormatters: [
+                      LengthLimitingTextInputFormatter(10),
+                    ],
+                    style: TextStyle(
+                        color: white.withOpacity(.5),
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600),
+                    onChanged: (value) {
+                      setState(() {
+                        number = value;
+                        if (number.startsWith('0')) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              backgroundColor: Colors.red,
+                              content: Text(
+                                'Number can\'t be start with 0',
+                                style: TextStyle(
+                                  color: white,
+                                ),
+                              ),
+                            ),
+                          );
+                          _numberController.clear();
+                        }
+                      });
+                    },
                     keyboardType: TextInputType.phone,
                     decoration: InputDecoration(
                       border: InputBorder.none,
@@ -169,6 +203,80 @@ class _NumberScreenState extends State<NumberScreen> {
             customButton(
               size: size,
               title: 'SEND',
+              onTap: () {
+                if (number.isEmpty) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      duration: Duration(seconds: 2),
+                      backgroundColor: primary,
+                      content: Text(
+                        'Please Enter A Valid Number',
+                        style: TextStyle(color: white),
+                      ),
+                    ),
+                  );
+                } else if (number.length < 10) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      duration: Duration(seconds: 2),
+                      backgroundColor: primary,
+                      content: Text(
+                        'Your number length should be 10',
+                        style: TextStyle(color: white),
+                      ),
+                    ),
+                  );
+                } else {
+                  showDialog(
+                    context: context,
+                    builder: (_) => AlertDialog(
+                      backgroundColor: background,
+                      title: Text(
+                        'Recheck the number!',
+                        style: TextStyle(
+                          color: white.withOpacity(.8),
+                        ),
+                      ),
+                      content: Text(
+                        '$selectedCountry$number\nIs this OK, or would you like to edit the number?',
+                        textAlign: TextAlign.start,
+                        style: TextStyle(color: white.withOpacity(.5)),
+                      ),
+                      actions: [
+                        TextButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          child: const Text(
+                            'EDIT',
+                            style: TextStyle(
+                              color: white,
+                            ),
+                          ),
+                        ),
+                        TextButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                            navigator(
+                              context,
+                              OtpScreen(
+                                number: selectedCountry +
+                                    _numberController.text.toString(),
+                              ),
+                            );
+                          },
+                          child: const Text(
+                            'OK',
+                            style: TextStyle(
+                              color: primary,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                }
+              },
             )
           ],
         ),

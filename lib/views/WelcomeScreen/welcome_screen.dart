@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:whatsapp_chat/components/page_route.dart';
 import 'package:whatsapp_chat/utils/colors.dart';
 import 'package:whatsapp_chat/views/AuthScreen/NumberScreen/number_screen.dart';
@@ -17,10 +18,9 @@ class WelcomeScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(
-              'assets/images/logo.png',
-              color: white.withOpacity(.8),
-              width: 100,
+            Lottie.asset(
+              'assets/json/welcome.json',
+              width: 250,
             ),
             const SizedBox(
               height: 50,
@@ -49,12 +49,11 @@ class WelcomeScreen extends StatelessWidget {
               height: 50,
             ),
             customButton(
-              size: size,
-              title: 'Get Started',
-              onTap: (){
-                navigator(context, const NumberScreen());
-              }
-            ),
+                size: size,
+                title: 'Get Started',
+                onTap: () {
+                  navigator(context, const NumberScreen());
+                }),
           ],
         ),
       ),
